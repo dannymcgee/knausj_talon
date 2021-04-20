@@ -118,6 +118,7 @@ mod.apps.jetbrains = "app.name: idea64.exe"
 mod.apps.jetbrains = "app.name: PyCharm64.exe"
 mod.apps.jetbrains = "app.name: pycharm64.exe"
 mod.apps.jetbrains = "app.name: webstorm64.exe"
+mod.apps.jetbrains = "app.name: rider64.exe"
 mod.apps.jetbrains = """
 os: mac
 and app.bundle: com.jetbrains.pycharm
@@ -156,7 +157,7 @@ class win_actions:
     def filename():
         title = actions.win.title()
         result = title.split(" ")
-        
+
         for word in result:
             if "." in word:
                 return word

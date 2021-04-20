@@ -1,11 +1,11 @@
-#(jay son | jason ): "json"
-#(http | htp): "http"
+jay son: "json"
+(http | htp): "http"
 #tls: "tls"
 #M D five: "md5"
-#word (regex | rejex): "regex"
+word (regex | rejex): "regex"
 #word queue: "queue"
 #word eye: "eye"
-#word iter: "iter"
+word iter: "iter"
 #word no: "NULL"
 #word cmd: "cmd"
 #word dup: "dup"
@@ -21,9 +21,9 @@ undo that: edit.undo()
 redo that: edit.redo()
 paste match: edit.paste_match_style()
 file save: edit.save()
-wipe: key(backspace)    
-(pad | padding): 
-	insert("  ") 
+wipe: key(backspace)
+(pad | padding):
+	insert("  ")
 	key(left)
 slap:
 	edit.line_end()

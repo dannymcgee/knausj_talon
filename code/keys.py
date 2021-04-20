@@ -3,7 +3,7 @@ from typing import Set
 from talon import Module, Context, actions, app
 import sys
 
-default_alphabet = "air bat cap drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank zip".split(
+default_alphabet = "air bat cap drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap you vest whale plex yank zip".split(
     " "
 )
 letters_string = "abcdefghijklmnopqrstuvwxyz"
@@ -154,27 +154,34 @@ punctuation_words = {
 symbol_key_words = {
     "dot": ".",
     "quote": "'",
-    "L square": "[",
-    "left square": "[",
-    "square": "[",
-    "R square": "]",
-    "right square": "]",
-    "slash": "/",
-    "backslash": "\\",
+    "L bracket": "[",
+    "left bracket": "[",
+    "bracket": "[",
+    "R bracket": "]",
+    "right bracket": "]",
+    "lash": "/",
+    "backlash": "\\",
     "minus": "-",
+    "hyphen": "-",
     "dash": "-",
-    "equals": "=",
+    "equal": "=",
     "plus": "+",
     "tilde": "~",
     "bang": "!",
     "dollar": "$",
     "down score": "_",
     "under score": "_",
+    "low dash": "_",
     "paren": "(",
+    "arc": "(",
     "L paren": "(",
+    "L arc": "(",
     "left paren": "(",
+    "left arc": "(",
     "R paren": ")",
+    "R arc": ")",
     "right paren": ")",
+    "right arc": ")",
     "brace": "{",
     "left brace": "{",
     "R brace": "}",

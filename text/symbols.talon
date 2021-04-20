@@ -1,8 +1,8 @@
 question [mark]: "?"
 (downscore | underscore): "_"
 double dash: "--"
-(bracket | brack | left bracket): "{"
-(rbrack | are bracket | right bracket): "}"
+(brace | left brace): "{"
+(rbrace | are brace | right brace): "}"
 triple quote: "'''"
 (dot dot | dotdot): ".."
 #ellipses: "…"
@@ -10,7 +10,7 @@ ellipses: "..."
 (comma and | spamma): ", "
 plus: "+"
 arrow: "->"
-dub arrow: "=>"
+fat arrow: "=>"
 new line: "\\n"
 carriage return: "\\r"
 line feed: "\\r\\n"
@@ -31,28 +31,35 @@ empty escaped string:
 (inside parens | args):
 	insert("()")
 	key(left)
-inside (squares | list): 
-	insert("[]") 
+inside (brackets | list):
+	insert("[]")
 	key(left)
-inside (bracket | braces): 
-	insert("{}") 
+inside braces:
+	insert("{}")
 	key(left)
-inside percent: 
-	insert("%%") 
+inside handlebars:
+    insert("{{}}")
+    key(left)
+    key(left)
+inside percent:
+	insert("%%")
 	key(left)
 inside quotes:
 	insert('""')
 	key(left)
-angle that: 
+angle that:
     text = edit.selected_text()
     user.paste("<{text}>")
-(bracket | brace) that: 
+brace that:
+    text = edit.selected_text()
+    user.paste("{{text}}")
+dub brace that:
     text = edit.selected_text()
     user.paste("{{{text}}}")
-(parens | args) that: 
+(parens | args) that:
     text = edit.selected_text()
     user.paste("({text})")
-percent that: 
+percent that:
     text = edit.selected_text()
     user.paste("%{text}%")
 quote that:

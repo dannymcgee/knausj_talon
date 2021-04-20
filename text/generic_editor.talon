@@ -7,6 +7,12 @@ next one:
 go word left:
     edit.word_left()
 
+jump left:
+    edit.word_left()
+
+jump right:
+    edit.word_right()
+
 go word right:
     edit.word_right()
 
@@ -24,6 +30,12 @@ go down:
 
 go line start:
     edit.line_start()
+
+front:
+    edit.line_start()
+
+push:
+    edit.line_end()
 
 go line end:
     edit.line_end()
