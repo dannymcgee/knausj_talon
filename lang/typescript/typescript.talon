@@ -14,9 +14,9 @@ settings():
     user.code_protected_variable_formatter = "PRIVATE_CAMEL_CASE"
     user.code_public_variable_formatter = "PRIVATE_CAMEL_CASE"
 
-action(user.code_is_not_null): " !== null"
+action(user.code_is_not_null): " != null"
 
-action(user.code_is_null): " === null"
+action(user.code_is_null): " == null"
 
 action(user.code_type_dictionary):
   insert("{}")
@@ -65,7 +65,7 @@ action(user.code_state_go_to): ""
 action(user.code_import): "import "
 
 action(user.code_from_import):
-  insert(" from  \"\"")
+  insert(" from \"\"")
   key(left)
 
 action(user.code_type_class): "class "

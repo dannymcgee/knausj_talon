@@ -58,30 +58,30 @@ action(user.code_null): "null"
 action(user.code_is_null): " == null "
 action(user.code_is_not_null): " != null"
 action(user.code_state_if):
-    insert("if()")
+    insert("if () ")
     key(left)
 action(user.code_state_else_if):
-    insert("else if()")
+    insert("else if () ")
     key(left)
 action(user.code_state_else):
-    insert("else\n{{\n}}\n")
+    insert("else {{\n}}\n")
     key(up )
 action(user.code_state_switch):
-    insert("switch()")
+    insert("switch ()")
     edit.left()
 action(user.code_state_case):
-    insert("case \nbreak;")
+    insert("case : \nbreak;")
     edit.up()
 action(user.code_state_for): "for "
 action(user.code_state_for_each):
-    insert("foreach() ")
+    insert("foreach () ")
     key(left)
     edit.word_left()
     key(space)
     edit.left()
 action(user.code_state_go_to): "go to "
 action(user.code_state_while):
-    insert("while()")
+    insert("while () ")
     edit.left()
 action(user.code_state_return): "return "
 action(user.code_break): "break;"
