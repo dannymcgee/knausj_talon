@@ -119,20 +119,26 @@ language switch: user.vscode("workbench.action.editor.changeLanguageMode")
 refactor rename: user.vscode("editor.action.rename")
 refactor this: user.vscode("editor.action.refactor")
 
-#code navigation
+# Code navigation
 (go declaration | follow): user.vscode("Go to Declaration")
-go back: user.vscode("workbench.action.navigateBack")
-go forward: user.vscode("workbench.action.navigateForward")
+# go back: user.vscode("workbench.action.navigateBack")
+# go forward: user.vscode("workbench.action.navigateForward")
 go implementation: user.vscode("Go to Implementation")
 go recent: user.vscode("File: Open Recent")
 go type: user.vscode("editor.action.goToTypeDefinition")
 go usage: user.vscode("References: Find All References")
 
+# Angular file switcher
+go styles: user.vscode("Angular File Switcher: Open stylesheet")
+go controller: user.vscode("Angular File Switcher: Open controller")
+go template: user.vscode("Angular File Switcher: Open template")
+go spec: user.vscode("Angular File Switcher: Open unit tests")
+
 # Bookmarks. Requires Bookmarks plugin
-go marks: user.vscode("View: Show Bookmarks")
-toggle mark: user.vscode("Bookmarks: Toggle")
-go next mark: user.vscode("Bookmarks: Jump to Next")
-go last mark: user.vscode("Bookmarks: Jump to Previous")
+# go marks: user.vscode("View: Show Bookmarks")
+# toggle mark: user.vscode("Bookmarks: Toggle")
+# go next mark: user.vscode("Bookmarks: Jump to Next")
+# go last mark: user.vscode("Bookmarks: Jump to Previous")
 
 # Folding
 fold that: user.vscode("editor.fold")
@@ -195,3 +201,7 @@ copy line up: user.vscode("editor.action.copyLinesUpAction")
 #Expand/Shrink AST Selection
 select less: user.vscode("editor.action.smartSelect.shrink")
 select (more|this): user.vscode("editor.action.smartSelect.expand")
+
+# Misc
+comment that: key("ctrl-/")
+unsplit: key("ctrl-1")
