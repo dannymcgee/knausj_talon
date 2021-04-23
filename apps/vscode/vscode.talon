@@ -42,17 +42,21 @@ action(user.split_window): user.vscode("View: Split Editor")
 #note: vscode has no explicit mode for multiple cursors
 action(user.multi_cursor_add_above): user.vscode("Add Cursor Above")
 action(user.multi_cursor_add_below): user.vscode("Add Cursor Below")
-action(user.multi_cursor_add_to_line_ends): user.vscode("Add Cursor to Line Ends")
 action(user.multi_cursor_disable): key(escape)
 action(user.multi_cursor_enable): skip()
-action(user.multi_cursor_select_all_occurrences): user.vscode("Select All Occurrences of Find Match")
-action(user.multi_cursor_select_fewer_occurrences): user.vscode("Cursor Undo")
-action(user.multi_cursor_select_more_occurrences): user.vscode("Add Selection To Next Find Match")
-#multiple_cursor.py support end
 
-please [<user.text>]:
-  user.vscode("Show All Commands")
-  insert(user.text or "")
+action(user.multi_cursor_add_to_line_ends):
+    user.vscode("Add Cursor to Line Ends")
+
+action(user.multi_cursor_select_all_occurrences):
+    user.vscode("Select All Occurrences of Find Match")
+
+action(user.multi_cursor_select_fewer_occurrences):
+    user.vscode("Cursor Undo")
+
+action(user.multi_cursor_select_more_occurrences):
+    user.vscode("Add Selection To Next Find Match")
+
 
 # Sidebar
 bar explore: user.vscode("workbench.view.explorer")
@@ -81,12 +85,8 @@ fullscreen switch: user.vscode("workbench.action.toggleFullScreen")
 theme switch: user.vscode("workbench.action.selectTheme")
 wrap switch: user.vscode("editor.action.toggleWordWrap")
 zen switch: user.vscode("workbench.action.toggleZenMode")
+whitespace switch: user.vscode("editor.action.toggleRenderWhitespace")
 
-# File Commands
-file hunt [<user.text>]:
-  user.vscode("Go to File")
-  sleep(50ms)
-  insert(text or "")
 file copy path: user.vscode_ignore_clipboard("File: Copy Path of Active File")
 file create sibling: user.vscode("File: New File")
 file create: user.vscode("File: New Untitled File")
@@ -173,7 +173,7 @@ git stage all: user.vscode("git.stageAll")
 git unstage: user.vscode("git.unstage")
 git unstage all: user.vscode("git.unstageAll")
 
-#Debugging
+# Debugging
 break point: user.vscode("editor.debug.action.toggleBreakpoint")
 step over: user.vscode("workbench.action.debug.stepOver")
 debug step into: user.vscode("workbench.action.debug.stepInto")
@@ -185,23 +185,25 @@ debug continue: user.vscode("workbench.action.debug.continue")
 debug restart: user.vscode("workbench.action.debug.restart")
 
 # Terminal
-terminal external: user.vscode("workbench.action.terminal.openNativeConsole")
-terminal new: user.vscode("workbench.action.terminal.new")
-terminal next: user.vscode("workbench.action.terminal.focusNextPane")
-terminal last: user.vscode("workbench.action.terminal.focusPreviousPane")
-terminal split: user.vscode("workbench.action.terminal.split")
-terminal trash: user.vscode("Terminal:Kill")
-terminal scroll up: user.vscode("Terminal:ScrollUp")
-terminal scroll down: user.vscode("Terminal:ScrollDown")
+go terminal: key("ctrl-`")
 
-#TODO: should this be added to linecommands?
+# Line commands
 copy line down: user.vscode("editor.action.copyLinesDownAction")
 copy line up: user.vscode("editor.action.copyLinesUpAction")
 
-#Expand/Shrink AST Selection
+# Expand/Shrink AST Selection
 select less: user.vscode("editor.action.smartSelect.shrink")
 select (more|this): user.vscode("editor.action.smartSelect.expand")
 
 # Misc
 comment that: key("ctrl-/")
 unsplit: key("ctrl-1")
+
+# Open the command palette
+hey listen: key("ctrl-shift-p")
+
+# Open the file finder
+find file [<user.text>]:
+    user.vscode("Go to File")
+    sleep(50ms)
+    insert(text or "")

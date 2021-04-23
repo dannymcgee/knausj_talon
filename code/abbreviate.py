@@ -47,6 +47,7 @@ ctx.lists["user.abbreviation"] = {
     "context": "ctx",
     "control": "ctrl",
     "constant": "const",
+    "constructor": "ctor",
     "coordinate": "coord",
     "coordinates": "coords",
     "copy": "cpy",

@@ -3,7 +3,7 @@ from typing import Set
 from talon import Module, Context, actions, app
 import sys
 
-default_alphabet = "air bat cap drum each fine gopher harp sit jury crunch look made near odd pike quench red sun trap you vent whale plex yank zip".split(
+default_alphabet = "air bat cap drum each fox gopher harp sit jury crunch look made near oscar prince quench red sun trap you vest whale plex yank zed".split(
     " "
 )
 letters_string = "abcdefghijklmnopqrstuvwxyz"
@@ -219,7 +219,7 @@ ctx.lists["self.arrow_key"] = {
 }
 
 simple_keys = [
-    "end",
+    # "end",
     "enter",
     "escape",
     "home",
