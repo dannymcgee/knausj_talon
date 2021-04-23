@@ -4,6 +4,8 @@
 ^force java$: user.code_set_language_mode("java")
 ^force java script$: user.code_set_language_mode("javascript")
 ^force type script$: user.code_set_language_mode("typescript")
+^force markup$: user.code_set_language_mode("html")
+^force sass$: user.code_set_language_mode("scss")
 ^force markdown$: user.code_set_language_mode("markdown")
 ^force python$: user.code_set_language_mode("python")
 ^force are language$: user.code_set_language_mode("r")
@@ -13,4 +15,3 @@
     mode.enable("user.gdb")
 disable debug mode:
     mode.disable("user.gdb")
-    
