@@ -59,13 +59,19 @@ action(user.multi_cursor_select_more_occurrences):
 
 
 # Sidebar
-bar explore: user.vscode("workbench.view.explorer")
-bar extensions: user.vscode("workbench.view.extensions")
-bar outline: user.vscode("outline.focus")
-bar run: user.vscode("workbench.view.debug")
-bar search: user.vscode("workbench.view.search")
-bar source: user.vscode("workbench.view.scm")
-bar switch: user.vscode("workbench.action.toggleSidebarVisibility")
+go explorer: user.vscode("workbench.view.explorer")
+go extensions: user.vscode("workbench.view.extensions")
+go outline: user.vscode("outline.focus")
+go run: user.vscode("workbench.view.debug")
+go find all: user.vscode("workbench.view.search")
+switch sidebar: user.vscode("workbench.action.toggleSidebarVisibility")
+
+# Source control
+go source control: user.vscode("workbench.view.scm")
+go version control: user.vscode("workbench.view.scm")
+go remotes: user.vscode("gitlens.views.remotes.focus")
+go branches: user.vscode("gitlens.views.branches.focus")
+go commits: user.vscode("gitlens.views.commits.focus")
 
 # Panels
 panel control: user.vscode("workbench.panel.repl.view.focus")
@@ -75,17 +81,17 @@ panel switch: user.vscode("workbench.action.togglePanel")
 panel terminal: user.vscode("workbench.panel.terminal.focus")
 
 # Settings
-show settings: user.vscode("workbench.action.openGlobalSettings")
-show shortcuts: user.vscode("workbench.action.openGlobalKeybindings")
-show snippets: user.vscode("workbench.action.openSnippets")
+go settings: user.vscode("workbench.action.openGlobalSettings")
+go shortcuts: user.vscode("workbench.action.openGlobalKeybindings")
+go snippets: user.vscode("workbench.action.openSnippets")
 
 # Display
 centered switch: user.vscode("workbench.action.toggleCenteredLayout")
 fullscreen switch: user.vscode("workbench.action.toggleFullScreen")
 theme switch: user.vscode("workbench.action.selectTheme")
-wrap switch: user.vscode("editor.action.toggleWordWrap")
+switch word wrap: user.vscode("editor.action.toggleWordWrap")
 zen switch: user.vscode("workbench.action.toggleZenMode")
-whitespace switch: user.vscode("editor.action.toggleRenderWhitespace")
+switch whitespace: user.vscode("editor.action.toggleRenderWhitespace")
 
 file copy path: user.vscode_ignore_clipboard("File: Copy Path of Active File")
 file create sibling: user.vscode("File: New File")
@@ -162,7 +168,7 @@ git merge: user.vscode("git.merge")
 git output: user.vscode("git.showOutput")
 git pull: user.vscode("git.pullRebase")
 git push: user.vscode("git.push")
-git push focus: user.vscode("git.pushForce")
+git push force: user.vscode("git.pushForce")
 git rebase abort: user.vscode("git.rebaseAbort")
 git reveal: user.vscode("git.revealInExplorer")
 git revert: user.vscode("git.revertChange")
@@ -207,3 +213,20 @@ find file [<user.text>]:
     user.vscode("Go to File")
     sleep(50ms)
     insert(text or "")
+
+go left group: user.vscode("workbench.action.focusLeftGroup")
+go right group: user.vscode("workbench.action.focusRightGroup")
+
+move tab left: user.vscode("workbench.action.moveEditorLeftInGroup")
+move tab right: user.vscode("workbench.action.moveEditorRightInGroup")
+
+tab next: user.vscode("workbench.action.nextEditorInGroup")
+tab prev: user.vscode("workbench.action.previousEditorInGroup")
+
+close tabs to the right: user.vscode("workbench.action.closeEditorsToTheRight")
+close other tabs: user.vscode("workbench.action.closeOtherEditors")
+
+go explorer: user.vscode("workbench.explorer.fileView.focus")
+go tabs: user.vscode("workbench.action.focusActiveEditorGroup")
+
+find in file: key("ctrl-f")
